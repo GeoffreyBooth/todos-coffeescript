@@ -5,11 +5,12 @@
 # but you can also edit it by hand.
 
 # meteor libraries
-meteor-base@1.0.4
-ecmascript@0.7.2
+meteor-base@1.1.0
+ecmascript@0.8.3
 es5-shim@4.6.15
 check@1.2.5
-tracker@1.1.2
+tracker@1.1.3
+dynamic-import
 
 # standard libraries
 jquery@1.11.10
@@ -18,13 +19,13 @@ less@2.7.9
 
 # ui
 blaze-html-templates@1.0.4
-reactive-dict@1.1.8
+reactive-dict@1.1.9
 reactive-var@1.0.11
 aldeed:template-extension
 percolate:momentum
 
 # data
-mongo@1.1.16
+mongo@1.2.2
 aldeed:simple-schema
 aldeed:collection2
 dburles:collection-helpers
@@ -42,7 +43,7 @@ zimme:active-route
 tap:i18n
 
 # accounts
-accounts-password@1.3.5
+accounts-password@1.4.0
 useraccounts:core
 useraccounts:unstyled
 useraccounts:flow-routing
@@ -50,12 +51,12 @@ softwarerero:accounts-t9n
 
 # mobile
 crosswalk@1.7.1
-mobile-experience@1.0.4
+mobile-experience@1.0.5
 chriswessels:hammer
 
 # production
 juliancwirko:postcss
-standard-minifier-js@2.0.0
+standard-minifier-js@2.1.2
 ddp-rate-limiter@1.0.7
 app-prod-security
 
@@ -70,7 +71,7 @@ practicalmeteor:sinon
 practicalmeteor:mocha
 hwillson:stub-collections
 johanbrook:publication-collector
-shell-server@0.2.3
+shell-server@0.2.4
 dburles:factory
 
 # security
