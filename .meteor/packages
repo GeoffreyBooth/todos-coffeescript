@@ -67,7 +67,7 @@ simple:rest
 xolvio:cleaner
 practicalmeteor:chai
 practicalmeteor:sinon
-practicalmeteor:mocha
+meteortesting:mocha
 hwillson:stub-collections
 johanbrook:publication-collector
 shell-server@0.2.3
@@ -75,7 +75,6 @@ dburles:factory
 
 # security
 audit-argument-checks@1.0.7
-dispatch:mocha
 
 # coffeescript
 coffeescript
