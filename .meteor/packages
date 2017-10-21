@@ -39,7 +39,8 @@ arillo:flow-router-helpers
 zimme:active-route
 
 # i18n
-tap:i18n
+universe:i18n
+universe:i18n-blaze
 
 # accounts
 accounts-password@1.3.5
@@ -75,4 +76,4 @@ dburles:factory
 audit-argument-checks@1.0.7
 
 # coffeescript
-coffeescript
+coffeescript@2.0.1_1

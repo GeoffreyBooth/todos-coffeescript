@@ -1,7 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Factory } from 'meteor/dburles:factory';
-import { TAPi18n } from 'meteor/tap:i18n';
+import i18n from 'meteor/universe:i18n';
 
 import { Todos } from '../todos/todos.js';
 
@@ -9,7 +9,7 @@ class ListsCollection extends Mongo.Collection {
   insert(list, callback, language = 'en') {
     const ourList = list;
     if (!ourList.name) {
-      const defaultName = TAPi18n.__('lists.insert.list', null, language);
+      const defaultName = i18n.__('lists.insert.list', null, language);
       let nextLetter = 'A';
       ourList.name = `${defaultName} ${nextLetter}`;
 

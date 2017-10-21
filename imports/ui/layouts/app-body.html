@@ -24,17 +24,17 @@
             </a>
             {{#if userMenuOpen}}
               <a class="js-logout btn-secondary">
-                {{_ 'layouts.appBody.logout'}}
+                {{__ 'layouts.appBody.logout'}}
               </a>
             {{/if}}
           </div>
         {{else}}
           <div class="btns-group">
             <a href="{{pathFor 'signin'}}" class="btn-secondary">
-              {{_ 'layouts.appBody.login'}}
+              {{__ 'layouts.appBody.login'}}
             </a>
             <a href="{{pathFor 'join'}}" class="btn-secondary">
-              {{_ 'layouts.appBody.join'}}
+              {{__ 'layouts.appBody.join'}}
             </a>
           </div>
         {{/if}}
@@ -42,7 +42,7 @@
         <div class="list-todos">
           <a class="js-new-list link-list-new">
             <span class="icon-plus"></span>
-            {{_ 'layouts.appBody.newList'}}
+            {{__ 'layouts.appBody.newList'}}
           </a>
 
           {{#each list in lists}}
@@ -68,10 +68,10 @@
             <span class="icon-sync"></span>
             <div class="meta">
               <div class="title-notification">
-                {{_ 'layouts.appBody.tryingToConnect'}}
+                {{__ 'layouts.appBody.tryingToConnect'}}
               </div>
               <div class="description">
-                {{_ 'layouts.appBody.connectionIssue'}}
+                {{__ 'layouts.appBody.connectionIssue'}}
               </div>
             </div>
           </div>

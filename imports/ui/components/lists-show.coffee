@@ -6,7 +6,7 @@ import { Tracker } from 'meteor/tracker'
 import { $ } from 'meteor/jquery'
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
-import { TAPi18n } from 'meteor/tap:i18n'
+import i18n from 'meteor/universe:i18n'
 
 import './lists-show.html'
 
@@ -62,7 +62,7 @@ Template.Lists_show.onCreated ->
 
   @deleteList = =>
     list = @data.list()
-    message = "#{TAPi18n.__('lists.remove.confirm')} “#{list.name}”?"
+    message = "#{i18n.__('lists.remove.confirm')} “#{list.name}”?"
     if confirm(message)
       remove.call { listId: list._id }, displayError
 

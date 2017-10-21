@@ -4,7 +4,7 @@ import { ReactiveDict } from 'meteor/reactive-dict'
 import { Template } from 'meteor/templating'
 import { ActiveRoute } from 'meteor/zimme:active-route'
 import { FlowRouter } from 'meteor/kadira:flow-router'
-import { TAPi18n } from 'meteor/tap:i18n'
+import i18n from 'meteor/universe:i18n'
 import { T9n } from 'meteor/softwarerero:accounts-t9n'
 import { _ } from 'meteor/underscore'
 import { $ } from 'meteor/jquery'
@@ -42,6 +42,7 @@ Template.App_body.onCreated ->
   @state.setDefault
     menuOpen: no
     userMenuOpen: no
+    language: i18n.getLocale()
 
 
 Template.App_body.helpers
@@ -84,10 +85,11 @@ Template.App_body.helpers
       instance.state.set 'menuOpen', yes
 
   languages: ->
-    _.keys TAPi18n.getLanguages()
+    ['en', 'fr']
 
   isActiveLanguage: (language) ->
-    TAPi18n.getLanguage() is language
+    instance = Template.instance()
+    instance.state.get('language').split('-')[0] is language
 
 
 Template.App_body.events
@@ -115,19 +117,19 @@ Template.App_body.events
       if list.userId
         FlowRouter.go 'Lists.show', Lists.findOne(userId: $exists: no)
 
-  'click .js-new-list': ->
-    listId = insert.call { language: TAPi18n.getLanguage() }, (err) ->
+  'click .js-new-list': (event, instance) ->
+    listId = insert.call { language: instance.state.get('language') }, (err) ->
       if err
         # At this point, we have already redirected to the new list page, but
         # for some reason the list didn't get created. This should almost never
         # happen, but it's good to handle it anyway.
         FlowRouter.go 'App.home'
-        alert TAPi18n.__ 'layouts.appBody.newListError'
+        alert i18n.__ 'layouts.appBody.newListError'
 
     FlowRouter.go 'Lists.show', _id: listId
 
-  'click .js-toggle-language': (event) ->
+  'click .js-toggle-language': (event, instance) ->
     language = $(event.target).html().trim()
     T9n.setLanguage language
-    TAPi18n.setLanguage language
-
+    i18n.setLocale language
+    instance.state.set 'language', i18n.getLocale()

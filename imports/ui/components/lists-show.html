@@ -9,7 +9,7 @@
               <a href="#" class="js-cancel nav-item">
                 <span
                   class="icon-close js-cancel"
-                  title={{_ 'lists.show.cancel'}}>
+                  title={{__ 'lists.show.cancel'}}>
                 </span>
               </a>
             </div>
@@ -19,7 +19,7 @@
             <a href="#" class="js-menu nav-item">
               <span
                 class="icon-list-unordered"
-                title={{_ 'lists.show.showMenu'}}>
+                title={{__ 'lists.show.showMenu'}}>
               </span>
             </a>
           </div>
@@ -33,14 +33,14 @@
             <div class="nav-item options-mobile">
               <select class="list-edit">
                 <option disabled selected>
-                  {{_ 'lists.show.selectAction'}}
+                  {{__ 'lists.show.selectAction'}}
                 </option>
                 {{#if list.userId}}
-                  <option value="public">{{_ 'lists.show.makePublic'}}</option>
+                  <option value="public">{{__ 'lists.show.makePublic'}}</option>
                 {{else}}
-                  <option value="private">{{_ 'lists.show.makePrivate'}}</option>
+                  <option value="private">{{__ 'lists.show.makePrivate'}}</option>
                 {{/if}}
-                <option value="delete">{{_ 'lists.show.delete'}}</option>
+                <option value="delete">{{__ 'lists.show.delete'}}</option>
               </select>
               <span class="icon-cog"></span>
             </div>
@@ -49,12 +49,12 @@
                 {{#if list.userId}}
                   <span
                     class="icon-lock"
-                    title={{_ 'lists.show.makeListPublic'}}>
+                    title={{__ 'lists.show.makeListPublic'}}>
                   </span>
                 {{else}}
                   <span
                     class="icon-unlock"
-                    title={{_ 'lists.show.makeListPrivate'}}>
+                    title={{__ 'lists.show.makeListPrivate'}}>
                   </span>
                 {{/if}}
               </a>
@@ -62,7 +62,7 @@
               <a class="js-delete-list nav-item">
                 <span
                   class="icon-trash"
-                  title={{_ 'lists.show.deleteList'}}>
+                  title={{__ 'lists.show.deleteList'}}>
                 </span>
               </a>
             </div>
@@ -73,7 +73,7 @@
       <form class="js-todo-new todo-new input-symbol">
         <input
           type="text"
-          placeholder={{_ 'lists.show.typeToAdd'}}
+          placeholder={{__ 'lists.show.typeToAdd'}}
         />
         <span class="icon-add js-todo-add"></span>
       </form>
@@ -85,13 +85,13 @@
           {{> Todos_item (todoArgs todo)}}
         {{else}}
           <div class="wrapper-message">
-            <div class="title-message">{{_ 'lists.show.noTasks'}}</div>
-            <div class="subtitle-message">{{_ 'lists.show.addAbove'}}</div>
+            <div class="title-message">{{__ 'lists.show.noTasks'}}</div>
+            <div class="subtitle-message">{{__ 'lists.show.addAbove'}}</div>
           </div>
         {{/each}}
       {{else}}
         <div class="wrapper-message">
-          <div class="title-message">{{_ 'lists.show.loading'}}</div>
+          <div class="title-message">{{__ 'lists.show.loading'}}</div>
         </div>
       {{/if}}
     </div>

@@ -1,15 +1,16 @@
 import { Mongo } from 'meteor/mongo'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import { Factory } from 'meteor/dburles:factory'
-import { TAPi18n } from 'meteor/tap:i18n'
+import i18n from 'meteor/universe:i18n'
 
 import { Todos } from '../todos/todos.coffee'
 
 class ListsCollection extends Mongo.Collection
   insert: (list, callback, language = 'en') ->
+    i18n.setLocale language
     ourList = list
     unless ourList.name?
-      defaultName = TAPi18n.__ 'lists.insert.list', null, language
+      defaultName = i18n.__ 'lists.insert.list'
       nextLetter = 'A'
       ourList.name = "#{defaultName} #{nextLetter}"
 
