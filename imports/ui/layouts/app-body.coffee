@@ -74,7 +74,7 @@ Template.App_body.helpers
     if showConnectionIssue.get()
       Meteor.status().connected
     else
-    	yes
+      yes
 
   templateGestures:
     'swipeleft .cordova': (event, instance) ->

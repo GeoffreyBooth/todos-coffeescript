@@ -37,8 +37,8 @@ export makePrivate = new ValidatedMethod
       throw new Meteor.Error 'lists.makePrivate.lastPublicList', 'Cannot make the last public list private.'
 
     Lists.update listId,
-    	$set:
-    		userId: @userId
+      $set:
+        userId: @userId
 
 
 export makePublic = new ValidatedMethod
@@ -55,8 +55,8 @@ export makePublic = new ValidatedMethod
     # XXX the security check above is not atomic, so in theory a race condition could
     # result in exposing private data
     Lists.update listId,
-    	$unset:
-    		userId: yes
+      $unset:
+        userId: yes
 
 
 export updateName = new ValidatedMethod
@@ -77,8 +77,8 @@ export updateName = new ValidatedMethod
     # result in exposing private data
 
     Lists.update listId,
-    	$set:
-    		name: newName
+      $set:
+        name: newName
 
 
 export remove = new ValidatedMethod

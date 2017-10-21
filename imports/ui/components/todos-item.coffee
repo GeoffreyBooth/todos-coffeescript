@@ -15,12 +15,12 @@ Template.Todos_item.onCreated ->
   @autorun ->
     new SimpleSchema
       todo:
-      	type: Todos._helpers
+        type: Todos._helpers
       editing:
         type: Boolean
         optional: yes
       onEditingChange:
-      	type: Function
+        type: Function
     .validate Template.currentData()
 
 
