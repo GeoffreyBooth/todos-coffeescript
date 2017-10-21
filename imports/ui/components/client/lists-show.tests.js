@@ -3,7 +3,7 @@
 
 import { Mongo } from 'meteor/mongo';
 import { Factory } from 'meteor/dburles:factory';
-import { chai } from 'meteor/practicalmeteor:chai';
+import { assert } from 'chai';
 import { Template } from 'meteor/templating';
 import { _ } from 'meteor/underscore';
 import { $ } from 'meteor/jquery';
@@ -49,7 +49,7 @@ describe('Lists_show', function () {
       const renderedText = $(el).find('.list-items input[type=text]')
         .map((i, e) => $(e).val())
         .toArray();
-      chai.assert.deepEqual(renderedText, todosText);
+      assert.deepEqual(renderedText, todosText);
     });
   });
 });

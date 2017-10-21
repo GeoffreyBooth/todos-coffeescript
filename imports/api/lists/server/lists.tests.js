@@ -3,7 +3,7 @@
 
 import { Factory } from 'meteor/dburles:factory';
 import { PublicationCollector } from 'meteor/johanbrook:publication-collector';
-import { chai, assert } from 'meteor/practicalmeteor:chai';
+import { assert } from 'chai';
 import { Random } from 'meteor/random';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -41,7 +41,7 @@ describe('lists', function () {
       it('sends all public lists', function (done) {
         const collector = new PublicationCollector();
         collector.collect('lists.public', (collections) => {
-          chai.assert.equal(collections.lists.length, 3);
+          assert.equal(collections.lists.length, 3);
           done();
         });
       });
@@ -50,7 +50,7 @@ describe('lists', function () {
       it('sends all owned lists', function (done) {
         const collector = new PublicationCollector({ userId });
         collector.collect('lists.private', (collections) => {
-          chai.assert.equal(collections.lists.length, 2);
+          assert.equal(collections.lists.length, 2);
           done();
         });
       });

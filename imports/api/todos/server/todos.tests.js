@@ -3,7 +3,7 @@
 
 import { Factory } from 'meteor/dburles:factory';
 import { PublicationCollector } from 'meteor/johanbrook:publication-collector';
-import { chai, assert } from 'meteor/practicalmeteor:chai';
+import { assert } from 'chai';
 import { Random } from 'meteor/random';
 import { _ } from 'meteor/underscore';
 import { Todos } from '../todos.coffee';
@@ -47,7 +47,7 @@ describe('todos', function () {
           'todos.inList',
           { listId: publicList._id },
           (collections) => {
-            chai.assert.equal(collections.todos.length, 3);
+            assert.equal(collections.todos.length, 3);
             done();
           }
         );
@@ -58,7 +58,7 @@ describe('todos', function () {
           'todos.inList',
           { listId: publicList._id },
           (collections) => {
-            chai.assert.equal(collections.todos.length, 3);
+            assert.equal(collections.todos.length, 3);
             done();
           }
         );
@@ -69,7 +69,7 @@ describe('todos', function () {
           'todos.inList',
           { listId: privateList._id },
           (collections) => {
-            chai.assert.equal(collections.todos.length, 3);
+            assert.equal(collections.todos.length, 3);
             done();
           }
         );
@@ -80,7 +80,7 @@ describe('todos', function () {
           'todos.inList',
           { listId: privateList._id },
           (collections) => {
-            chai.assert.isUndefined(collections.todos);
+            assert.isUndefined(collections.todos);
             done();
           }
         );
@@ -91,7 +91,7 @@ describe('todos', function () {
           'todos.inList',
           { listId: privateList._id },
           (collections) => {
-            chai.assert.isUndefined(collections.todos);
+            assert.isUndefined(collections.todos);
             done();
           }
         );
