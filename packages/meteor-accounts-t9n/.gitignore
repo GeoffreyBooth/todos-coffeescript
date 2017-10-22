@@ -1,0 +1,8 @@
+.build*
+*.iml
+smart.lock
+.meteor
+packages
+.versions
+.DS_Store
+node_modules
